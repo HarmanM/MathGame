@@ -14,8 +14,8 @@ session_start();
     $email = $_POST['email'];
     $password = $_POST['password'];
     if ($email == "a@a.a" && $password == "aaa") {
-        $id = session_id();
-        $_SESSION['username']=$username;
+        
+        $_SESSION['username']=1;
         
 
         header("Location: index.php");
@@ -24,7 +24,7 @@ session_start();
     
 else if($email == "b@b.b" & $password == "bbb") {
        
-       $_SESSION['username']=$username;
+       $_SESSION['username']=1;
 
          header("Location: index.php");
          exit();

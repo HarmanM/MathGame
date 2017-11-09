@@ -2,6 +2,12 @@
 ob_start();
 session_start();
 ?>
+
+<?php 
+if(!isset($_SESSION['username'])) {
+       header("Location: login.php");
+    }
+?>
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
@@ -20,9 +26,7 @@ session_start();
     $sign;
     $correctAnswer;
     
-    //if(!isset($_SESSION['username'])) {
-    //   header("Location: login.php");
-   // }
+    
     
     
     if(!isset($_POST["correctScore"])) {
@@ -45,14 +49,16 @@ session_start();
         $correctAnswer = $rand1 - $rand2;
     }
     
-    if(!is_numeric($_POST['userAnswer'])) {
-        $message = "Wrong";
-    }
+    
     if(isset($_POST['userAnswer'])) {
         $input = $_POST[userAnswer];
-    }
-
-    if(isset($_POST['total'])){
+    } 
+if(isset($_POST['submit']) && (empty($_POST['userAnswer']) || !is_numeric($_POST['userAnswer']))) {
+         
+            $message = "Please enter a number.";
+        }
+    else {
+        if(isset($_POST['total'])){
          if ($input === $_POST['total']) {
            $message =  "correct";
         $correctScore++;
@@ -64,8 +70,7 @@ session_start();
         $totalScore++;
          }
     } 
-    
-    
+    }
  
     
     ?>
@@ -91,7 +96,7 @@ session_start();
     <input type="hidden" name="correctScore" value= "<?php echo $correctScore  ?>" />
     <input type="hidden" name="totalScore" value= "<?php echo $totalScore ?>" />
            <div class="row" id="row2">
-            <div class ="col-sm-12 col-sm-offset-4"><button type="submit" class="btn btn-primary">Submit</button></div>
+            <div class ="col-sm-12 col-sm-offset-4"><button type="submit" name="submit" class="btn btn-primary">Submit</button></div>
     </div>
             </form>
 
