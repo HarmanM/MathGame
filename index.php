@@ -13,7 +13,7 @@ if(!isset($_SESSION['username'])) {
 <head>
 	<title>Math Game</title>
     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="/style/style.css" type="text/css">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
