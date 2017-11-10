@@ -23,7 +23,7 @@
     <div class="form-group">
         <div class="col-sm-4">Password:</div>
         <div class="col-sm-4">
-            <input type="text" class="form-control" id="password" name="password" placeholder="Password" size="6" maxlength="20">
+            <input type="password" class="form-control" id="password" name="password" placeholder="Password" size="6" maxlength="20">
         </div>       
     </div>
     <div class="row">
